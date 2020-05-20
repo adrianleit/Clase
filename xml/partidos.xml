@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.5.1
+- http://www.phpmyadmin.net
+-
+- Servidor: localhost
+- Tiempo de generación: 07-05-2020 a las 12:07:55
+- Versión del servidor: 5.5.24-log
+- Versión de PHP: 5.4.3
+-->
+<?xml-stylesheet type="text/xsl" href="..\xslt\partidos.xslt"?>
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+	<!--
+    - Structure schemas
+    -->
+	<pma:structure_schemas>
+		<pma:database name="ligadefutbol" collation="latin1_spanish_ci" charset="latin1">
+			<pma:table name="partidos">
+                CREATE TABLE `partidos` (
+                  `nombre_campo` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `fecha` date NOT NULL,
+                  `hora` time NOT NULL,
+                  `resultado` varchar(5) COLLATE latin1_spanish_ci NOT NULL,
+                  `equipo_local` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `equipo_visitante` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  PRIMARY KEY (`nombre_campo`,`fecha`,`hora`,`equipo_local`,`equipo_visitante`),
+                  KEY `equipo_local` (`equipo_local`),
+                  KEY `equipo_visitante` (`equipo_visitante`),
+                  CONSTRAINT `partidos_ibfk_1` FOREIGN KEY (`equipo_local`) REFERENCES `equipos` (`equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `partidos_ibfk_2` FOREIGN KEY (`equipo_visitante`) REFERENCES `equipos` (`equipo`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+            </pma:table>
+		</pma:database>
+	</pma:structure_schemas>
+	<!--
+    - Base de datos: 'ligadefutbol'
+    -->
+	<database name="ligadefutbol">
+		<column name="img">../images/laliga.svg</column>
+
+		<!-- Tabla partidos -->
+		<table name="partidos">
+			<column name="nombre_campo">Camp Nou</column>
+			<column name="fecha">2019-09-14</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">5-2</column>
+			<column name="equipo_local">Barcelona</column>
+			<column name="equipo_visitante">Valencia</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Camp Nou</column>
+			<column name="fecha">2019-09-24</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">2-1</column>
+			<column name="equipo_local">Barcelona</column>
+			<column name="equipo_visitante">Villarreal</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Camp Nou</column>
+			<column name="fecha">2019-10-06</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">4-0</column>
+			<column name="equipo_local">Barcelona</column>
+			<column name="equipo_visitante">Sevilla</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Camp Nou</column>
+			<column name="fecha">2019-12-18</column>
+			<column name="hora">20:00:00</column>
+			<column name="resultado">0-0</column>
+			<column name="equipo_local">Barcelona</column>
+			<column name="equipo_visitante">Real Madrid</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Coliseum Alfonso Perez</column>
+			<column name="fecha">2019-08-24</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">1-1</column>
+			<column name="equipo_local">Getafe</column>
+			<column name="equipo_visitante">Athletic de Bilbao</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Coliseum Alfonso Perez</column>
+			<column name="fecha">2019-09-28</column>
+			<column name="hora">16:00:00</column>
+			<column name="resultado">0-2</column>
+			<column name="equipo_local">Getafe</column>
+			<column name="equipo_visitante">Barcelona</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Estadio de la Ceramica</column>
+			<column name="fecha">2019-09-01</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">2-2</column>
+			<column name="equipo_local">Villarreal</column>
+			<column name="equipo_visitante">Real Madrid</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Estadio de la Ceramica</column>
+			<column name="fecha">2019-11-03</column>
+			<column name="hora">14:00:00</column>
+			<column name="resultado">0-0</column>
+			<column name="equipo_local">Villarreal</column>
+			<column name="equipo_visitante">Athletic de Bilbao</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Estadio de la Ceramica</column>
+			<column name="fecha">2019-12-06</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">0-0</column>
+			<column name="equipo_local">Villarreal</column>
+			<column name="equipo_visitante">Atletico de Madrid</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Estadio de la Ceramica</column>
+			<column name="fecha">2019-12-21</column>
+			<column name="hora">18:30:00</column>
+			<column name="resultado">1-0</column>
+			<column name="equipo_local">Villarreal</column>
+			<column name="equipo_visitante">Getafe</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Mestalla</column>
+			<column name="fecha">2019-08-17</column>
+			<column name="hora">19:00:00</column>
+			<column name="resultado">1-1</column>
+			<column name="equipo_local">Valencia</column>
+			<column name="equipo_visitante">Real Sociedad</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Mestalla</column>
+			<column name="fecha">2019-09-25</column>
+			<column name="hora">20:00:00</column>
+			<column name="resultado">3-3</column>
+			<column name="equipo_local">Valencia</column>
+			<column name="equipo_visitante">Getafe</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Mestalla</column>
+			<column name="fecha">2019-10-30</column>
+			<column name="hora">19:00:00</column>
+			<column name="resultado">1-1</column>
+			<column name="equipo_local">Valencia</column>
+			<column name="equipo_visitante">Sevilla</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Mestalla</column>
+			<column name="fecha">2019-11-30</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">2-1</column>
+			<column name="equipo_local">Valencia</column>
+			<column name="equipo_visitante">Villarreal</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Mestalla</column>
+			<column name="fecha">2019-12-15</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">1-1</column>
+			<column name="equipo_local">Valencia</column>
+			<column name="equipo_visitante">Real Madrid</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Ramon Sanchez-Pizjuan</column>
+			<column name="fecha">2019-09-22</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">0-1</column>
+			<column name="equipo_local">Sevilla</column>
+			<column name="equipo_visitante">Real Madrid</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Ramon Sanchez-Pizjuan</column>
+			<column name="fecha">2019-09-22</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">3-2</column>
+			<column name="equipo_local">Sevilla</column>
+			<column name="equipo_visitante">Real Sociedad</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Ramon Sanchez-Pizjuan</column>
+			<column name="fecha">2019-10-27</column>
+			<column name="hora">18:30:00</column>
+			<column name="resultado">2-0</column>
+			<column name="equipo_local">Sevilla</column>
+			<column name="equipo_visitante">Getafe</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Ramon Sanchez-Pizjuan</column>
+			<column name="fecha">2019-11-02</column>
+			<column name="hora">18:30:00</column>
+			<column name="resultado">1-1</column>
+			<column name="equipo_local">Sevilla</column>
+			<column name="equipo_visitante">Atletico de Madrid</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Ramon Sanchez-Pizjuan</column>
+			<column name="fecha">2019-12-15</column>
+			<column name="hora">18:30:00</column>
+			<column name="resultado">1-2</column>
+			<column name="equipo_local">Sevilla</column>
+			<column name="equipo_visitante">Villarreal</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Reale Arena</column>
+			<column name="fecha">2019-09-19</column>
+			<column name="hora">18:30:00</column>
+			<column name="resultado">2-0</column>
+			<column name="equipo_local">Real Sociedad</column>
+			<column name="equipo_visitante">Atletico de Madrid</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Reale Arena</column>
+			<column name="fecha">2019-10-09</column>
+			<column name="hora">18:30:00</column>
+			<column name="resultado">1-2</column>
+			<column name="equipo_local">Real Sociedad</column>
+			<column name="equipo_visitante">Getafe</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Reale Arena</column>
+			<column name="fecha">2019-12-14</column>
+			<column name="hora">16:00:00</column>
+			<column name="resultado">2-2</column>
+			<column name="equipo_local">Real Sociedad</column>
+			<column name="equipo_visitante">Barcelona</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">San Mames</column>
+			<column name="fecha">2019-08-16</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">1-0</column>
+			<column name="equipo_local">Athletic de Bilbao</column>
+			<column name="equipo_visitante">Barcelona</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">San Mames</column>
+			<column name="fecha">2019-08-30</column>
+			<column name="hora">22:00:00</column>
+			<column name="resultado">2-0</column>
+			<column name="equipo_local">Athletic de Bilbao</column>
+			<column name="equipo_visitante">Real Sociedad</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">San Mames</column>
+			<column name="fecha">2019-10-28</column>
+			<column name="hora">13:00:00</column>
+			<column name="resultado">0-1</column>
+			<column name="equipo_local">Athletic de Bilbao</column>
+			<column name="equipo_visitante">Valencia</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Santiago Bernabeu</column>
+			<column name="fecha">2019-11-23</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">3-1</column>
+			<column name="equipo_local">Real Madrid</column>
+			<column name="equipo_visitante">Real Sociedad</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Santiago Bernabeu</column>
+			<column name="fecha">2019-12-22</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">0-0</column>
+			<column name="equipo_local">Real Madrid</column>
+			<column name="equipo_visitante">Athletic de Bilbao</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Wanda Metropolitano</column>
+			<column name="fecha">2019-08-18</column>
+			<column name="hora">22:00:00</column>
+			<column name="resultado">1-0</column>
+			<column name="equipo_local">Atletico de Madrid</column>
+			<column name="equipo_visitante">Getafe</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Wanda Metropolitano</column>
+			<column name="fecha">2019-09-28</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">0-0</column>
+			<column name="equipo_local">Atletico de Madrid</column>
+			<column name="equipo_visitante">Real Madrid</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Wanda Metropolitano</column>
+			<column name="fecha">2019-10-19</column>
+			<column name="hora">16:00:00</column>
+			<column name="resultado">1-1</column>
+			<column name="equipo_local">Atletico de Madrid</column>
+			<column name="equipo_visitante">Valencia</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Wanda Metropolitano</column>
+			<column name="fecha">2019-10-26</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">2-0</column>
+			<column name="equipo_local">Atletico de Madrid</column>
+			<column name="equipo_visitante">Athletic de Bilbao</column>
+		</table>
+		<table name="partidos">
+			<column name="nombre_campo">Wanda Metropolitano</column>
+			<column name="fecha">2019-12-01</column>
+			<column name="hora">21:00:00</column>
+			<column name="resultado">0-1</column>
+			<column name="equipo_local">Atletico de Madrid</column>
+			<column name="equipo_visitante">Barcelona</column>
+		</table>
+	</database>
+</pma_xml_export>

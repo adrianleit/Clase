@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.5.1
+- http://www.phpmyadmin.net
+-
+- Servidor: localhost
+- Tiempo de generación: 07-05-2020 a las 12:07:20
+- Versión del servidor: 5.5.24-log
+- Versión de PHP: 5.4.3
+-->
+<?xml-stylesheet type="text/xsl" href="..\xslt\jugadores.xslt"?>
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+	<!--
+    - Structure schemas
+    -->
+	<pma:structure_schemas>
+		<pma:database name="ligadefutbol" collation="latin1_spanish_ci" charset="latin1">
+			<pma:table name="jugadores">
+                CREATE TABLE `jugadores` (
+                  `nombre` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `apellido1` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+                  `apellido2` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+                  `posicion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `pais_nacimiento` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `dorsal` varchar(2) COLLATE latin1_spanish_ci NOT NULL,
+                  `fecha_nacimiento` date NOT NULL,
+                  `goles` int(11) DEFAULT NULL,
+                  `expulsiones` tinyint(1) DEFAULT NULL,
+                  `equipo` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `capitan` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+                  PRIMARY KEY (`nombre`,`dorsal`,`fecha_nacimiento`),
+                  KEY `capitan` (`capitan`),
+                  KEY `apellido1` (`apellido1`),
+                  KEY `equipo` (`equipo`),
+                  CONSTRAINT `jugadores_ibfk_1` FOREIGN KEY (`equipo`) REFERENCES `equipos` (`equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `jugadores_ibfk_2` FOREIGN KEY (`capitan`) REFERENCES `jugadores` (`apellido1`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+            </pma:table>
+		</pma:database>
+	</pma:structure_schemas>
+	<!--
+    - Base de datos: 'ligadefutbol'
+    -->
+	<database name="ligadefutbol">
+	<column name="img">../images/laliga.svg</column>
+
+		<!-- Tabla jugadores -->
+		<table name="jugadores">
+			<column name="nombre">Alec</column>
+			<column name="apellido1">Oneil</column>
+			<column name="apellido2">Collins</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">China</column>
+			<column name="dorsal">14</column>
+			<column name="fecha_nacimiento">2002-05-29</column>
+			<column name="goles">4</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Alphonse</column>
+			<column name="apellido1">Areola</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Francia</column>
+			<column name="dorsal">1</column>
+			<column name="fecha_nacimiento">1993-02-27</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Alvin</column>
+			<column name="apellido1">Olson</column>
+			<column name="apellido2">Gibbs</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Botswana</column>
+			<column name="dorsal">33</column>
+			<column name="fecha_nacimiento">1999-05-09</column>
+			<column name="goles">24</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Amery</column>
+			<column name="apellido1">Lloyd</column>
+			<column name="apellido2">Woodward</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Zimbabwe</column>
+			<column name="dorsal">63</column>
+			<column name="fecha_nacimiento">2001-11-25</column>
+			<column name="goles">3</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Ander</column>
+			<column name="apellido1">Capa</column>
+			<column name="apellido2">Rodriguez</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">21</column>
+			<column name="fecha_nacimiento">1992-02-08</column>
+			<column name="goles">2</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Antoine</column>
+			<column name="apellido1">Griezmann</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Francia</column>
+			<column name="dorsal">10</column>
+			<column name="fecha_nacimiento">1991-03-21</column>
+			<column name="goles">7</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Aritz</column>
+			<column name="apellido1">Aduriz</column>
+			<column name="apellido2">Zubeldia</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">20</column>
+			<column name="fecha_nacimiento">1981-02-11</column>
+			<column name="goles">1</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Asher</column>
+			<column name="apellido1">Moon</column>
+			<column name="apellido2">Campos</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Canada</column>
+			<column name="dorsal">59</column>
+			<column name="fecha_nacimiento">1982-04-17</column>
+			<column name="goles">39</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Avram</column>
+			<column name="apellido1">Conner</column>
+			<column name="apellido2">Cantu</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Antigua and Barbuda</column>
+			<column name="dorsal">45</column>
+			<column name="fecha_nacimiento">1993-02-03</column>
+			<column name="goles">13</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Baxter</column>
+			<column name="apellido1">Anderson</column>
+			<column name="apellido2">Poole</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">French Polynesia</column>
+			<column name="dorsal">48</column>
+			<column name="fecha_nacimiento">1999-05-28</column>
+			<column name="goles">36</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Beñat</column>
+			<column name="apellido1">Etxeberria</column>
+			<column name="apellido2">Urkiaga</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">7</column>
+			<column name="fecha_nacimiento">1987-02-19</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Bert</column>
+			<column name="apellido1">Lindsay</column>
+			<column name="apellido2">Grimes</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Italy</column>
+			<column name="dorsal">81</column>
+			<column name="fecha_nacimiento">1986-08-05</column>
+			<column name="goles">4</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Blaze</column>
+			<column name="apellido1">Dunn</column>
+			<column name="apellido2">Greene</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Syria</column>
+			<column name="dorsal">77</column>
+			<column name="fecha_nacimiento">1993-06-23</column>
+			<column name="goles">22</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Boris</column>
+			<column name="apellido1">Salazar</column>
+			<column name="apellido2">Deleon</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Mozambique</column>
+			<column name="dorsal">32</column>
+			<column name="fecha_nacimiento">2000-06-07</column>
+			<column name="goles">25</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">Salazar</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Brendan</column>
+			<column name="apellido1">Shaffer</column>
+			<column name="apellido2">Park</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">United States</column>
+			<column name="dorsal">96</column>
+			<column name="fecha_nacimiento">2000-06-01</column>
+			<column name="goles">34</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Cadman</column>
+			<column name="apellido1">Ballard</column>
+			<column name="apellido2">Campbell</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Tonga</column>
+			<column name="dorsal">25</column>
+			<column name="fecha_nacimiento">1986-01-08</column>
+			<column name="goles">10</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Cadman</column>
+			<column name="apellido1">Jones</column>
+			<column name="apellido2">Johnson</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Tokelau</column>
+			<column name="dorsal">68</column>
+			<column name="fecha_nacimiento">1981-10-28</column>
+			<column name="goles">16</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Caesar</column>
+			<column name="apellido1">Stewart</column>
+			<column name="apellido2">Martinez</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Puerto Rico</column>
+			<column name="dorsal">5</column>
+			<column name="fecha_nacimiento">1982-06-24</column>
+			<column name="goles">40</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Charles</column>
+			<column name="apellido1">Moody</column>
+			<column name="apellido2">Kirkland</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Haiti</column>
+			<column name="dorsal">59</column>
+			<column name="fecha_nacimiento">2001-01-29</column>
+			<column name="goles">17</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Clarke</column>
+			<column name="apellido1">Perry</column>
+			<column name="apellido2">Boyer</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Jersey</column>
+			<column name="dorsal">37</column>
+			<column name="fecha_nacimiento">1991-06-12</column>
+			<column name="goles">12</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Clayton</column>
+			<column name="apellido1">Reed</column>
+			<column name="apellido2">Tyler</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Montserrat</column>
+			<column name="dorsal">85</column>
+			<column name="fecha_nacimiento">1981-09-15</column>
+			<column name="goles">6</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Dalton</column>
+			<column name="apellido1">Campbell</column>
+			<column name="apellido2">Haley</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Sudan</column>
+			<column name="dorsal">5</column>
+			<column name="fecha_nacimiento">1980-07-23</column>
+			<column name="goles">8</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Dane</column>
+			<column name="apellido1">Benson</column>
+			<column name="apellido2">Jarvis</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Guinea</column>
+			<column name="dorsal">22</column>
+			<column name="fecha_nacimiento">1981-06-25</column>
+			<column name="goles">29</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">Benson</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Daniel</column>
+			<column name="apellido1">Garcia</column>
+			<column name="apellido2">Carrillo</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">14</column>
+			<column name="fecha_nacimiento">1990-05-24</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Daniel</column>
+			<column name="apellido1">Carvajal</column>
+			<column name="apellido2">Ramos</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">2</column>
+			<column name="fecha_nacimiento">1992-01-11</column>
+			<column name="goles">1</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">David</column>
+			<column name="apellido1">Burt</column>
+			<column name="apellido2">Strong</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Nauru</column>
+			<column name="dorsal">85</column>
+			<column name="fecha_nacimiento">1987-03-10</column>
+			<column name="goles">30</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Duncan</column>
+			<column name="apellido1">Mullen</column>
+			<column name="apellido2">Mcconnell</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Turkey</column>
+			<column name="dorsal">75</column>
+			<column name="fecha_nacimiento">1989-08-03</column>
+			<column name="goles">19</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Duncan</column>
+			<column name="apellido1">Brady</column>
+			<column name="apellido2">Mcconnell</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Malta</column>
+			<column name="dorsal">75</column>
+			<column name="fecha_nacimiento">1998-01-01</column>
+			<column name="goles">3</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Eden</column>
+			<column name="apellido1">Hazard</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Belgica</column>
+			<column name="dorsal">7</column>
+			<column name="fecha_nacimiento">1991-01-07</column>
+			<column name="goles">1</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Emmanuel</column>
+			<column name="apellido1">Avery</column>
+			<column name="apellido2">Cole</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Ireland</column>
+			<column name="dorsal">54</column>
+			<column name="fecha_nacimiento">1986-09-06</column>
+			<column name="goles">40</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Federico</column>
+			<column name="apellido1">Valverde</column>
+			<column name="apellido2">Dipetta</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">Uruguay</column>
+			<column name="dorsal">15</column>
+			<column name="fecha_nacimiento">1998-07-22</column>
+			<column name="goles">2</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Francisco</column>
+			<column name="apellido1">Alarcon</column>
+			<column name="apellido2">Suarez</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">22</column>
+			<column name="fecha_nacimiento">1992-04-21</column>
+			<column name="goles">2</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Frenkie</column>
+			<column name="apellido1">de Jong</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">Holanda</column>
+			<column name="dorsal">21</column>
+			<column name="fecha_nacimiento">1997-05-12</column>
+			<column name="goles">2</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Fuller</column>
+			<column name="apellido1">Juarez</column>
+			<column name="apellido2">Rice</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Macao</column>
+			<column name="dorsal">49</column>
+			<column name="fecha_nacimiento">1998-07-09</column>
+			<column name="goles">29</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Gavin</column>
+			<column name="apellido1">Blair</column>
+			<column name="apellido2">Lane</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Ecuador</column>
+			<column name="dorsal">69</column>
+			<column name="fecha_nacimiento">1993-09-05</column>
+			<column name="goles">33</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Gerard</column>
+			<column name="apellido1">Pique</column>
+			<column name="apellido2">Bernabeu</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">3</column>
+			<column name="fecha_nacimiento">1987-02-02</column>
+			<column name="goles">1</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Hashim</column>
+			<column name="apellido1">Wilson</column>
+			<column name="apellido2">Hopper</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Ecuador</column>
+			<column name="dorsal">19</column>
+			<column name="fecha_nacimiento">1997-09-01</column>
+			<column name="goles">4</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Hayden</column>
+			<column name="apellido1">Stephens</column>
+			<column name="apellido2">Potter</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Greenland</column>
+			<column name="dorsal">94</column>
+			<column name="fecha_nacimiento">1982-01-16</column>
+			<column name="goles">25</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Hayes</column>
+			<column name="apellido1">Fuller</column>
+			<column name="apellido2">Bentley</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Northern Mariana Islands</column>
+			<column name="dorsal">37</column>
+			<column name="fecha_nacimiento">1990-08-01</column>
+			<column name="goles">1</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Hayes</column>
+			<column name="apellido1">Ware</column>
+			<column name="apellido2">Miles</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Sint Maarten</column>
+			<column name="dorsal">40</column>
+			<column name="fecha_nacimiento">1980-07-01</column>
+			<column name="goles">10</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Henry</column>
+			<column name="apellido1">Bradley</column>
+			<column name="apellido2">Buck</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Russian Federation</column>
+			<column name="dorsal">86</column>
+			<column name="fecha_nacimiento">1990-12-16</column>
+			<column name="goles">26</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Iago</column>
+			<column name="apellido1">Herrerin</column>
+			<column name="apellido2">Buisan</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">13</column>
+			<column name="fecha_nacimiento">1988-01-25</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Ibai</column>
+			<column name="apellido1">Gomez</column>
+			<column name="apellido2">Perez</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">19</column>
+			<column name="fecha_nacimiento">1989-11-11</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Iker</column>
+			<column name="apellido1">Muniain</column>
+			<column name="apellido2">Goñi</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">10</column>
+			<column name="fecha_nacimiento">1992-12-19</column>
+			<column name="goles">4</column>
+			<column name="expulsiones">1</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">Muniain</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Iñaki</column>
+			<column name="apellido1">Williams</column>
+			<column name="apellido2">Arthuer</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">9</column>
+			<column name="fecha_nacimiento">1994-06-15</column>
+			<column name="goles">5</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Iñigo</column>
+			<column name="apellido1">Martinez</column>
+			<column name="apellido2">Berridi</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">4</column>
+			<column name="fecha_nacimiento">1991-05-17</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Ishmael</column>
+			<column name="apellido1">Hayden</column>
+			<column name="apellido2">Michael</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Switzerland</column>
+			<column name="dorsal">2</column>
+			<column name="fecha_nacimiento">1981-02-26</column>
+			<column name="goles">30</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">Hayden</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Ivan</column>
+			<column name="apellido1">Rakitic</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">Croacia</column>
+			<column name="dorsal">5</column>
+			<column name="fecha_nacimiento">1988-03-10</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Jared</column>
+			<column name="apellido1">Nichols</column>
+			<column name="apellido2">Morales</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Antarctica</column>
+			<column name="dorsal">7</column>
+			<column name="fecha_nacimiento">1999-04-17</column>
+			<column name="goles">18</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Jesse</column>
+			<column name="apellido1">Chan</column>
+			<column name="apellido2">Wiley</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Nigeria</column>
+			<column name="dorsal">17</column>
+			<column name="fecha_nacimiento">1980-10-06</column>
+			<column name="goles">15</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">Chan</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Jordi</column>
+			<column name="apellido1">Alba</column>
+			<column name="apellido2">Ramos</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">18</column>
+			<column name="fecha_nacimiento">1989-03-21</column>
+			<column name="goles">1</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Karim</column>
+			<column name="apellido1">Benzema</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Francia</column>
+			<column name="dorsal">9</column>
+			<column name="fecha_nacimiento">1987-12-19</column>
+			<column name="goles">14</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Kennan</column>
+			<column name="apellido1">Mcpherson</column>
+			<column name="apellido2">Christian</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Congo (Brazzaville)</column>
+			<column name="dorsal">27</column>
+			<column name="fecha_nacimiento">1999-03-24</column>
+			<column name="goles">15</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Kennedy</column>
+			<column name="apellido1">Rodgers</column>
+			<column name="apellido2">Williams</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Lebanon</column>
+			<column name="dorsal">55</column>
+			<column name="fecha_nacimiento">1998-05-21</column>
+			<column name="goles">19</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Kenneth</column>
+			<column name="apellido1">Mcclain</column>
+			<column name="apellido2">Steele</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Macao</column>
+			<column name="dorsal">56</column>
+			<column name="fecha_nacimiento">1989-09-29</column>
+			<column name="goles">4</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Kibo</column>
+			<column name="apellido1">Arnold</column>
+			<column name="apellido2">Lawson</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Ecuador</column>
+			<column name="dorsal">50</column>
+			<column name="fecha_nacimiento">1980-10-04</column>
+			<column name="goles">5</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Kyle</column>
+			<column name="apellido1">Joseph</column>
+			<column name="apellido2">Rodriquez</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Laos</column>
+			<column name="dorsal">57</column>
+			<column name="fecha_nacimiento">1996-05-18</column>
+			<column name="goles">1</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Lewis</column>
+			<column name="apellido1">Wolfe</column>
+			<column name="apellido2">Neal</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Mali</column>
+			<column name="dorsal">5</column>
+			<column name="fecha_nacimiento">1985-08-14</column>
+			<column name="goles">15</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Lionel</column>
+			<column name="apellido1">Messi</column>
+			<column name="apellido2">Cuccittini</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Argentina</column>
+			<column name="dorsal">10</column>
+			<column name="fecha_nacimiento">1987-06-24</column>
+			<column name="goles">14</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">Messi</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Luis</column>
+			<column name="apellido1">Suarez</column>
+			<column name="apellido2">Diaz</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Uruguay</column>
+			<column name="dorsal">9</column>
+			<column name="fecha_nacimiento">1987-01-24</column>
+			<column name="goles">11</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Luka</column>
+			<column name="apellido1">Modric</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">Croacia</column>
+			<column name="dorsal">10</column>
+			<column name="fecha_nacimiento">1985-09-09</column>
+			<column name="goles">4</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Malik</column>
+			<column name="apellido1">Meadows</column>
+			<column name="apellido2">Fitzpatrick</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Dominican Republic</column>
+			<column name="dorsal">81</column>
+			<column name="fecha_nacimiento">1989-12-14</column>
+			<column name="goles">23</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Marc-Andre</column>
+			<column name="apellido1">ter Stegen</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Alemania</column>
+			<column name="dorsal">1</column>
+			<column name="fecha_nacimiento">1992-04-30</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Marcelo</column>
+			<column name="apellido1">Vieira</column>
+			<column name="apellido2">da Silva</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Brasil</column>
+			<column name="dorsal">12</column>
+			<column name="fecha_nacimiento">1988-05-12</column>
+			<column name="goles">1</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Mark</column>
+			<column name="apellido1">Copeland</column>
+			<column name="apellido2">David</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Kyrgyzstan</column>
+			<column name="dorsal">48</column>
+			<column name="fecha_nacimiento">1980-01-28</column>
+			<column name="goles">24</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Marsden</column>
+			<column name="apellido1">Pittman</column>
+			<column name="apellido2">Riggs</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Botswana</column>
+			<column name="dorsal">32</column>
+			<column name="fecha_nacimiento">1985-06-05</column>
+			<column name="goles">3</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Nash</column>
+			<column name="apellido1">Clements</column>
+			<column name="apellido2">Kelly</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Guam</column>
+			<column name="dorsal">53</column>
+			<column name="fecha_nacimiento">1987-04-02</column>
+			<column name="goles">2</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Nasim</column>
+			<column name="apellido1">Warner</column>
+			<column name="apellido2">Combs</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">French Guiana</column>
+			<column name="dorsal">19</column>
+			<column name="fecha_nacimiento">1989-05-19</column>
+			<column name="goles">17</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Nehru</column>
+			<column name="apellido1">Sosa</column>
+			<column name="apellido2">Williams</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Bouvet Island</column>
+			<column name="dorsal">6</column>
+			<column name="fecha_nacimiento">1995-10-22</column>
+			<column name="goles">21</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Norberto</column>
+			<column name="apellido1">Murana</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Brasil</column>
+			<column name="dorsal">13</column>
+			<column name="fecha_nacimiento">1989-07-19</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Perry</column>
+			<column name="apellido1">Clements</column>
+			<column name="apellido2">Mcfarland</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Reunion</column>
+			<column name="dorsal">23</column>
+			<column name="fecha_nacimiento">1990-07-19</column>
+			<column name="goles">15</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Prescott</column>
+			<column name="apellido1">Hughes</column>
+			<column name="apellido2">Bush</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Anguilla</column>
+			<column name="dorsal">33</column>
+			<column name="fecha_nacimiento">1987-04-30</column>
+			<column name="goles">32</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Quinn</column>
+			<column name="apellido1">Hartman</column>
+			<column name="apellido2">Suarez</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Trinidad and Tobago</column>
+			<column name="dorsal">35</column>
+			<column name="fecha_nacimiento">1987-08-25</column>
+			<column name="goles">3</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Villarreal</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Quinn</column>
+			<column name="apellido1">Blackwell</column>
+			<column name="apellido2">Rodgers</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Indonesia</column>
+			<column name="dorsal">94</column>
+			<column name="fecha_nacimiento">1994-06-02</column>
+			<column name="goles">9</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Randall</column>
+			<column name="apellido1">Gonzalez</column>
+			<column name="apellido2">Nixon</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Macedonia</column>
+			<column name="dorsal">13</column>
+			<column name="fecha_nacimiento">1996-03-25</column>
+			<column name="goles">19</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Raphaël</column>
+			<column name="apellido1">Varane</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Francia</column>
+			<column name="dorsal">5</column>
+			<column name="fecha_nacimiento">1993-04-25</column>
+			<column name="goles">3</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Raul</column>
+			<column name="apellido1">Garcia</column>
+			<column name="apellido2">Escudero</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">22</column>
+			<column name="fecha_nacimiento">1986-07-11</column>
+			<column name="goles">6</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Raymond</column>
+			<column name="apellido1">Quinn</column>
+			<column name="apellido2">Ware</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Finland</column>
+			<column name="dorsal">31</column>
+			<column name="fecha_nacimiento">1991-09-29</column>
+			<column name="goles">9</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Robert</column>
+			<column name="apellido1">Mullins</column>
+			<column name="apellido2">Johnston</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Saint Vincent and The Grenadines</column>
+			<column name="dorsal">99</column>
+			<column name="fecha_nacimiento">1993-03-10</column>
+			<column name="goles">15</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Rodrygo</column>
+			<column name="apellido1">Goes</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Brasil</column>
+			<column name="dorsal">27</column>
+			<column name="fecha_nacimiento">2001-01-09</column>
+			<column name="goles">3</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Samuel</column>
+			<column name="apellido1">Umtiti</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">Camerun</column>
+			<column name="dorsal">23</column>
+			<column name="fecha_nacimiento">1993-08-17</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Sergi</column>
+			<column name="apellido1">Roberto</column>
+			<column name="apellido2">Carnicer</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">15</column>
+			<column name="fecha_nacimiento">1992-02-07</column>
+			<column name="goles">1</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Sergio</column>
+			<column name="apellido1">Ramos</column>
+			<column name="apellido2">Garcia</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">4</column>
+			<column name="fecha_nacimiento">1986-03-30</column>
+			<column name="goles">5</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">Ramos</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Sergio</column>
+			<column name="apellido1">Busquets</column>
+			<column name="apellido2">Burgos</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">5</column>
+			<column name="fecha_nacimiento">1988-07-16</column>
+			<column name="goles">2</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Barcelona</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Slade</column>
+			<column name="apellido1">Merrill</column>
+			<column name="apellido2">Ball</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Saint Pierre and Miquelon</column>
+			<column name="dorsal">98</column>
+			<column name="fecha_nacimiento">1984-07-24</column>
+			<column name="goles">19</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">Merrill</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Steven</column>
+			<column name="apellido1">Norton</column>
+			<column name="apellido2">Mayo</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Congo (Brazzaville)</column>
+			<column name="dorsal">56</column>
+			<column name="fecha_nacimiento">1995-01-02</column>
+			<column name="goles">34</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Real Sociedad</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Tarik</column>
+			<column name="apellido1">Norris</column>
+			<column name="apellido2">Bradford</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Guinea</column>
+			<column name="dorsal">95</column>
+			<column name="fecha_nacimiento">1993-10-05</column>
+			<column name="goles">27</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">Norris</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Thibaut</column>
+			<column name="apellido1">Courtois</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Belgica</column>
+			<column name="dorsal">13</column>
+			<column name="fecha_nacimiento">1993-02-27</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Toni</column>
+			<column name="apellido1">Kroos</column>
+			<column name="apellido2">NULL</column>
+			<column name="posicion">Centrocampista</column>
+			<column name="pais_nacimiento">Alemania</column>
+			<column name="dorsal">8</column>
+			<column name="fecha_nacimiento">1990-01-04</column>
+			<column name="goles">3</column>
+			<column name="expulsiones">NULL</column>
+			<column name="equipo">Real Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Unai</column>
+			<column name="apellido1">Simon</column>
+			<column name="apellido2">Mendibil</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">1</column>
+			<column name="fecha_nacimiento">1997-06-11</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Unai</column>
+			<column name="apellido1">Nuñez</column>
+			<column name="apellido2">Gestoso</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">3</column>
+			<column name="fecha_nacimiento">1997-01-30</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Wing</column>
+			<column name="apellido1">Stout</column>
+			<column name="apellido2">Owens</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Monaco</column>
+			<column name="dorsal">68</column>
+			<column name="fecha_nacimiento">1987-04-03</column>
+			<column name="goles">28</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Wylie</column>
+			<column name="apellido1">Cabrera</column>
+			<column name="apellido2">Houston</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Philippines</column>
+			<column name="dorsal">59</column>
+			<column name="fecha_nacimiento">1996-03-17</column>
+			<column name="goles">7</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Sevilla</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Xander</column>
+			<column name="apellido1">Lynn</column>
+			<column name="apellido2">Ratliff</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Sao Tome and Principe</column>
+			<column name="dorsal">9</column>
+			<column name="fecha_nacimiento">1985-10-28</column>
+			<column name="goles">5</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Getafe</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Xavier</column>
+			<column name="apellido1">Salazar</column>
+			<column name="apellido2">Pacheco</column>
+			<column name="posicion">Mediocentro</column>
+			<column name="pais_nacimiento">Nicaragua</column>
+			<column name="dorsal">64</column>
+			<column name="fecha_nacimiento">1995-03-03</column>
+			<column name="goles">4</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Yeray</column>
+			<column name="apellido1">Alvarez</column>
+			<column name="apellido2">Lopez</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">5</column>
+			<column name="fecha_nacimiento">1995-01-24</column>
+			<column name="goles">0</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Yuri</column>
+			<column name="apellido1">Berchiche</column>
+			<column name="apellido2">Izeta</column>
+			<column name="posicion">Defensa</column>
+			<column name="pais_nacimiento">España</column>
+			<column name="dorsal">17</column>
+			<column name="fecha_nacimiento">1990-02-10</column>
+			<column name="goles">2</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Zachery</column>
+			<column name="apellido1">Dean</column>
+			<column name="apellido2">Stephens</column>
+			<column name="posicion">Portero</column>
+			<column name="pais_nacimiento">Spain</column>
+			<column name="dorsal">29</column>
+			<column name="fecha_nacimiento">1996-01-19</column>
+			<column name="goles">22</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">NULL</column>
+		</table>
+		<table name="jugadores">
+			<column name="nombre">Zeus</column>
+			<column name="apellido1">Weiss</column>
+			<column name="apellido2">Shelton</column>
+			<column name="posicion">Delantero</column>
+			<column name="pais_nacimiento">Guernsey</column>
+			<column name="dorsal">26</column>
+			<column name="fecha_nacimiento">1993-10-26</column>
+			<column name="goles">31</column>
+			<column name="expulsiones">0</column>
+			<column name="equipo">Valencia</column>
+			<column name="capitan">NULL</column>
+		</table>
+	</database>
+</pma_xml_export>

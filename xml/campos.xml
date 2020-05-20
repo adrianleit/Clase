@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.5.1
+- http://www.phpmyadmin.net
+-
+- Servidor: localhost
+- Tiempo de generación: 07-05-2020 a las 12:01:57
+- Versión del servidor: 5.5.24-log
+- Versión de PHP: 5.4.3
+-->
+<?xml-stylesheet type="text/xsl" href="..\xslt\campos.xslt"?>
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+	<!--
+    - Structure schemas
+    -->
+	<pma:structure_schemas>
+		<pma:database name="ligadefutbol" collation="latin1_spanish_ci" charset="latin1">
+			<pma:table name="campos">
+                CREATE TABLE `campos` (
+                  `nombre` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `dimension` varchar(9) COLLATE latin1_spanish_ci NOT NULL,
+                  `maximo_aficionados` int(11) NOT NULL,
+                  `direccion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `municipio` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `region` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+                  `cesped` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `equipo` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+                  PRIMARY KEY (`direccion`),
+                  KEY `equipo` (`equipo`),
+                  KEY `nombre` (`nombre`),
+                  CONSTRAINT `campos_ibfk_1` FOREIGN KEY (`equipo`) REFERENCES `equipos` (`equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `campos_ibfk_2` FOREIGN KEY (`nombre`) REFERENCES `partidos` (`nombre_campo`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+            </pma:table>
+		</pma:database>
+	</pma:structure_schemas>
+	<!--
+    - Base de datos: 'ligadefutbol'
+    -->
+	<database name="ligadefutbol">
+		<column name="img">../images/laliga.svg</column>
+
+		<!-- Tabla campos -->
+		<table name="campos">
+			<column name="nombre">Santiago Bernabeu</column>
+			<column name="dimension">105 × 68</column>
+			<column name="maximo_aficionados">81044</column>
+			<column name="direccion">Avenida Concha Espina, 1</column>
+			<column name="municipio">Madrid</column>
+			<column name="region">Comunidad de Madrid</column>
+			<column name="cesped">Cesped Natural</column>
+			<column name="equipo">Real Madrid</column>
+		</table>
+		<table name="campos">
+			<column name="nombre">Wanda Metropolitano</column>
+			<column name="dimension">105 × 68</column>
+			<column name="maximo_aficionados">68456</column>
+			<column name="direccion">Avenida de Luis Aragonés, 4</column>
+			<column name="municipio">Madrid</column>
+			<column name="region">Comunidad de Madrid</column>
+			<column name="cesped">Cesped Natural</column>
+			<column name="equipo">Atletico de Madrid</column>
+		</table>
+		<table name="campos">
+			<column name="nombre">Mestalla</column>
+			<column name="dimension">105 × 68</column>
+			<column name="maximo_aficionados">48600</column>
+			<column name="direccion">Avenida de Suecia, s/n</column>
+			<column name="municipio">Valencia</column>
+			<column name="region">Comunidad Valenciana</column>
+			<column name="cesped">Cesped Natural</column>
+			<column name="equipo">Valencia</column>
+		</table>
+		<table name="campos">
+			<column name="nombre">Coliseum Alfonso Perez</column>
+			<column name="dimension">105 × 70</column>
+			<column name="maximo_aficionados">17000</column>
+			<column name="direccion">Avenida Teresa de Calcuta, 12</column>
+			<column name="municipio">Getafe</column>
+			<column name="region">Comunidad de Madrid</column>
+			<column name="cesped">Cesped Natural</column>
+			<column name="equipo">Getafe</column>
+		</table>
+		<table name="campos">
+			<column name="nombre">Camp Nou</column>
+			<column name="dimension">105 × 68</column>
+			<column name="maximo_aficionados">99354</column>
+			<column name="direccion">Calle Aristides Maillol, 12</column>
+			<column name="municipio">Barcelona</column>
+			<column name="region">Catuluña</column>
+			<column name="cesped">Cesped Natural</column>
+			<column name="equipo">Barcelona</column>
+		</table>
+		<table name="campos">
+			<column name="nombre">Estadio de la Ceramica</column>
+			<column name="dimension">105 × 68</column>
+			<column name="maximo_aficionados">23500</column>
+			<column name="direccion">Calle Blasco Ibáñez, 2</column>
+			<column name="municipio">Villarreal</column>
+			<column name="region">Comunidad Valenciana</column>
+			<column name="cesped">Cesped Natural</column>
+			<column name="equipo">Villarreal</column>
+		</table>
+		<table name="campos">
+			<column name="nombre">San Mames</column>
+			<column name="dimension">105 x 68</column>
+			<column name="maximo_aficionados">53289</column>
+			<column name="direccion">Calle Rafael Moreno Pitxitxi, s/n</column>
+			<column name="municipio">Bilbao</column>
+			<column name="region">Pais Vasco</column>
+			<column name="cesped">Cesped Natural</column>
+			<column name="equipo">Athletic de Bilbao</column>
+		</table>
+		<table name="campos">
+			<column name="nombre">Ramon Sanchez-Pizjuan</column>
+			<column name="dimension">115 × 72</column>
+			<column name="maximo_aficionados">43883</column>
+			<column name="direccion">Calle Sevilla Futbol Club s/n</column>
+			<column name="municipio">Sevilla</column>
+			<column name="region">Andalucia</column>
+			<column name="cesped">Cesped Natural</column>
+			<column name="equipo">Sevilla</column>
+		</table>
+		<table name="campos">
+			<column name="nombre">Reale Arena</column>
+			<column name="dimension">105 × 70</column>
+			<column name="maximo_aficionados">39500</column>
+			<column name="direccion">Paseo de Anoeta, 1</column>
+			<column name="municipio">San Sebastian</column>
+			<column name="region">Pais Vasco</column>
+			<column name="cesped">Cesped Natural</column>
+			<column name="equipo">Real Sociedad</column>
+		</table>
+	</database>
+</pma_xml_export>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.5.1
+- http://www.phpmyadmin.net
+-
+- Servidor: localhost
+- Tiempo de generación: 07-05-2020 a las 12:06:55
+- Versión del servidor: 5.5.24-log
+- Versión de PHP: 5.4.3
+-->
+<?xml-stylesheet type="text/xsl" href="..\xslt\equipos.xslt"?>
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+	<!--
+    - Structure schemas
+    -->
+	<pma:structure_schemas>
+		<pma:database name="ligadefutbol" collation="latin1_spanish_ci" charset="latin1">
+			<pma:table name="equipos">
+                CREATE TABLE `equipos` (
+                  `equipo` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `campo` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `municipio` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `region` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+                  `ligas_ganadas` int(11) DEFAULT NULL,
+                  `liga` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  PRIMARY KEY (`equipo`,`municipio`),
+                  KEY `liga` (`liga`),
+                  CONSTRAINT `equipos_ibfk_1` FOREIGN KEY (`liga`) REFERENCES `ligas` (`nombre`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+            </pma:table>
+		</pma:database>
+	</pma:structure_schemas>
+	<!--
+    - Base de datos: 'ligadefutbol'
+    -->
+	<database name="ligadefutbol">
+		<column name="img">../images/laliga.svg</column>
+		<!-- Tabla equipos -->
+		<table name="equipos">
+			<column name="equipo">Athletic de Bilbao</column>
+			<column name="campo">San Mames</column>
+			<column name="municipio">Bilbao</column>
+			<column name="region">Pais Vasco</column>
+			<column name="ligas_ganadas">8</column>
+			<column name="liga">La Liga Santander</column>
+			<column name="video">../video/athletic.mp4</column>
+		</table>
+		<table name="equipos">
+			<column name="equipo">Atletico de Madrid</column>
+			<column name="campo">Wanda Metropolitano</column>
+			<column name="municipio">Madrid</column>
+			<column name="region">Comunidad de Madrid</column>
+			<column name="ligas_ganadas">10</column>
+			<column name="liga">La Liga Santander</column>
+			<column name="video">../video/atletico_madrid.mp4</column>
+		</table>
+		<table name="equipos">
+			<column name="equipo">Barcelona</column>
+			<column name="campo">Camp Nou</column>
+			<column name="municipio">Barcelona</column>
+			<column name="region">Catuluña</column>
+			<column name="ligas_ganadas">26</column>
+			<column name="liga">La Liga Santander</column>
+			<column name="video">../video/barcelona.mp4</column>
+		</table>
+		<table name="equipos">
+			<column name="equipo">Getafe</column>
+			<column name="campo">Coliseum Alfonso Perez</column>
+			<column name="municipio">Getafe</column>
+			<column name="region">Comunidad de Madrid</column>
+			<column name="ligas_ganadas">0</column>
+			<column name="liga">La Liga Santander</column>
+			<column name="video">../video/getafe.mp4</column>
+		</table>
+		<table name="equipos">
+			<column name="equipo">Real Madrid</column>
+			<column name="campo">Santiago Bernabeu</column>
+			<column name="municipio">Madrid</column>
+			<column name="region">Comunidad de Madrid</column>
+			<column name="ligas_ganadas">33</column>
+			<column name="liga">La Liga Santander</column>
+			<column name="video">../video/real_madrid.mp4</column>
+		</table>
+		<table name="equipos">
+			<column name="equipo">Real Sociedad</column>
+			<column name="campo">Reale Arena</column>
+			<column name="municipio">San Sebastian</column>
+			<column name="region">Pais Vasco</column>
+			<column name="ligas_ganadas">2</column>
+			<column name="liga">La Liga Santander</column>
+			<column name="video">../video/real_sociedad.mp4</column>
+		</table>
+		<table name="equipos">
+			<column name="equipo">Sevilla</column>
+			<column name="campo">Ramon Sanchez-Pizjuan</column>
+			<column name="municipio">Sevilla</column>
+			<column name="region">Andalucia</column>
+			<column name="ligas_ganadas">1</column>
+			<column name="liga">La Liga Santander</column>
+			<column name="video">../video/sevilla-villareal.mp4</column>
+		</table>
+		<table name="equipos">
+			<column name="equipo">Valencia</column>
+			<column name="campo">Mestalla</column>
+			<column name="municipio">Valencia</column>
+			<column name="region">Comunidad Valenciana</column>
+			<column name="ligas_ganadas">6</column>
+			<column name="liga">La Liga Santander</column>
+			<column name="video">../video/real_sociedad.mp4</column>
+		</table>
+		<table name="equipos">
+			<column name="equipo">Villarreal</column>
+			<column name="campo">Estadio de la Ceramica</column>
+			<column name="municipio">Villarreal</column>
+			<column name="region">Comunidad Valenciana</column>
+			<column name="ligas_ganadas">0</column>
+			<column name="liga">La Liga Santander</column>
+			<column name="video">../video/sevilla-villareal.mp4</column>
+		</table>
+	</database>
+</pma_xml_export>

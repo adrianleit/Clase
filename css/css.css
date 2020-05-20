@@ -1,0 +1,54 @@
+.barra_navegacion {
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+}
+
+.barra_navegacion ul {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+
+}
+
+.barra_navegacion ul li {
+    display: flex;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.barra_navegacion ul li:hover {
+    background-color: yellow;
+    color: black;
+}
+
+.barra_navegacion ul li a{
+    text-decoration: none;
+    display: flex;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.barra_navegacion ul li a:hover{
+    background-color: yellow;
+    color: black;
+    text-decoration: none;
+}
+
+table {
+   width: 100%;
+   border: 1px solid #000;
+}
+th, td {
+    width: 10%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+    margin-left: 10px;
+    margin-right: 10px;
+}
