@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.5.1
+- http://www.phpmyadmin.net
+-
+- Servidor: localhost
+- Tiempo de generación: 07-05-2020 a las 12:07:38
+- Versión del servidor: 5.5.24-log
+- Versión de PHP: 5.4.3
+-->
+<?xml-stylesheet type="text/xsl" href="..\xslt\ligas.xslt"?>
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+	<!--
+    - Structure schemas
+    -->
+	<pma:structure_schemas>
+		<pma:database name="ligadefutbol" collation="latin1_spanish_ci" charset="latin1">
+			<pma:table name="ligas">
+                CREATE TABLE `ligas` (
+                  `nombre` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `año_creacion` int(4) NOT NULL,
+                  `equipos` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `ediciones_disputadas` int(11) NOT NULL,
+                  PRIMARY KEY (`nombre`,`año_creacion`),
+                  UNIQUE KEY `nombre` (`nombre`),
+                  UNIQUE KEY `año_creacion` (`año_creacion`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+            </pma:table>
+		</pma:database>
+	</pma:structure_schemas>
+	<!--
+    - Base de datos: 'ligadefutbol'
+    -->
+	<database name="ligadefutbol">
+		<column name="img">../images/laliga.svg</column>
+
+		<!-- Tabla ligas -->
+		<table name="ligas">
+			<column name="nombre">La Liga Santander</column>
+			<column name="año_creacion">1929</column>
+			<column name="equipos">20</column>
+			<column name="ediciones_disputadas">91</column>
+		</table>
+	</database>
+</pma_xml_export>

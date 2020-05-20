@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.5.1
+- http://www.phpmyadmin.net
+-
+- Servidor: localhost
+- Tiempo de generación: 07-05-2020 a las 12:06:29
+- Versión del servidor: 5.5.24-log
+- Versión de PHP: 5.4.3
+-->
+<?xml-stylesheet type="text/xsl" href="..\xslt\clasificacion.xslt"?>
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+	<!--
+    - Structure schemas
+    -->
+	<pma:structure_schemas>
+		<pma:database name="ligadefutbol" collation="latin1_spanish_ci" charset="latin1">
+			<pma:table name="clasificacion">
+                CREATE TABLE `clasificacion` (
+                  `nombre_liga` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `puntos_totales` int(3) NOT NULL,
+                  `equipos` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+                  `goles_favor` int(3) NOT NULL,
+                  `goles_contra` int(3) NOT NULL,
+                  `tarjetas_amarillas` int(2) DEFAULT NULL,
+                  `tarjetas_rojas` int(2) DEFAULT NULL,
+                  `partidos_ganados` int(2) DEFAULT NULL,
+                  `partidos_empatados` int(2) DEFAULT NULL,
+                  `partidoss_perdidos` int(2) DEFAULT NULL,
+                  PRIMARY KEY (`puntos_totales`,`equipos`,`nombre_liga`),
+                  KEY `nombre_liga` (`nombre_liga`),
+                  KEY `equipos` (`equipos`),
+                  CONSTRAINT `clasificacion_ibfk_1` FOREIGN KEY (`nombre_liga`) REFERENCES `ligas` (`nombre`) ON DELETE CASCADE ON UPDATE CASCADE,
+                  CONSTRAINT `clasificacion_ibfk_2` FOREIGN KEY (`equipos`) REFERENCES `equipos` (`equipo`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+            </pma:table>
+		</pma:database>
+	</pma:structure_schemas>
+	<!--
+    - Base de datos: 'ligadefutbol'
+    -->
+	<database name="ligadefutbol">
+	<column name="img">../images/laliga.svg</column>
+
+		<!-- Tabla clasificacion -->
+		<table name="clasificacion">
+			<column name="nombre_liga">La Liga Santander</column>
+			<column name="puntos_totales">31</column>
+			<column name="equipos">Athletic de Bilbao</column>
+			<column name="goles_favor">23</column>
+			<column name="goles_contra">19</column>
+			<column name="tarjetas_amarillas">51</column>
+			<column name="tarjetas_rojas">1</column>
+			<column name="partidos_ganados">7</column>
+			<column name="partidos_empatados">10</column>
+			<column name="partidoss_perdidos">6</column>
+		</table>
+		<table name="clasificacion">
+			<column name="nombre_liga">La Liga Santander</column>
+			<column name="puntos_totales">35</column>
+			<column name="equipos">Villarreal</column>
+			<column name="goles_favor">40</column>
+			<column name="goles_contra">31</column>
+			<column name="tarjetas_amarillas">46</column>
+			<column name="tarjetas_rojas">0</column>
+			<column name="partidos_ganados">10</column>
+			<column name="partidos_empatados">5</column>
+			<column name="partidoss_perdidos">8</column>
+		</table>
+		<table name="clasificacion">
+			<column name="nombre_liga">La Liga Santander</column>
+			<column name="puntos_totales">37</column>
+			<column name="equipos">Real Sociedad</column>
+			<column name="goles_favor">39</column>
+			<column name="goles_contra">31</column>
+			<column name="tarjetas_amarillas">44</column>
+			<column name="tarjetas_rojas">1</column>
+			<column name="partidos_ganados">11</column>
+			<column name="partidos_empatados">4</column>
+			<column name="partidoss_perdidos">8</column>
+		</table>
+		<table name="clasificacion">
+			<column name="nombre_liga">La Liga Santander</column>
+			<column name="puntos_totales">37</column>
+			<column name="equipos">Valencia</column>
+			<column name="goles_favor">33</column>
+			<column name="goles_contra">32</column>
+			<column name="tarjetas_amarillas">50</column>
+			<column name="tarjetas_rojas">5</column>
+			<column name="partidos_ganados">10</column>
+			<column name="partidos_empatados">7</column>
+			<column name="partidoss_perdidos">6</column>
+		</table>
+		<table name="clasificacion">
+			<column name="nombre_liga">La Liga Santander</column>
+			<column name="puntos_totales">39</column>
+			<column name="equipos">Atletico de Madrid</column>
+			<column name="goles_favor">23</column>
+			<column name="goles_contra">15</column>
+			<column name="tarjetas_amarillas">54</column>
+			<column name="tarjetas_rojas">2</column>
+			<column name="partidos_ganados">10</column>
+			<column name="partidos_empatados">9</column>
+			<column name="partidoss_perdidos">4</column>
+		</table>
+		<table name="clasificacion">
+			<column name="nombre_liga">La Liga Santander</column>
+			<column name="puntos_totales">39</column>
+			<column name="equipos">Sevilla</column>
+			<column name="goles_favor">29</column>
+			<column name="goles_contra">23</column>
+			<column name="tarjetas_amarillas">61</column>
+			<column name="tarjetas_rojas">1</column>
+			<column name="partidos_ganados">11</column>
+			<column name="partidos_empatados">6</column>
+			<column name="partidoss_perdidos">6</column>
+		</table>
+		<table name="clasificacion">
+			<column name="nombre_liga">La Liga Santander</column>
+			<column name="puntos_totales">42</column>
+			<column name="equipos">Getafe</column>
+			<column name="goles_favor">35</column>
+			<column name="goles_contra">20</column>
+			<column name="tarjetas_amarillas">75</column>
+			<column name="tarjetas_rojas">2</column>
+			<column name="partidos_ganados">12</column>
+			<column name="partidos_empatados">6</column>
+			<column name="partidoss_perdidos">5</column>
+		</table>
+		<table name="clasificacion">
+			<column name="nombre_liga">La Liga Santander</column>
+			<column name="puntos_totales">49</column>
+			<column name="equipos">Barcelona</column>
+			<column name="goles_favor">55</column>
+			<column name="goles_contra">28</column>
+			<column name="tarjetas_amarillas">53</column>
+			<column name="tarjetas_rojas">5</column>
+			<column name="partidos_ganados">15</column>
+			<column name="partidos_empatados">4</column>
+			<column name="partidoss_perdidos">4</column>
+		</table>
+		<table name="clasificacion">
+			<column name="nombre_liga">La Liga Santander</column>
+			<column name="puntos_totales">52</column>
+			<column name="equipos">Real Madrid</column>
+			<column name="goles_favor">44</column>
+			<column name="goles_contra">14</column>
+			<column name="tarjetas_amarillas">46</column>
+			<column name="tarjetas_rojas">4</column>
+			<column name="partidos_ganados">15</column>
+			<column name="partidos_empatados">7</column>
+			<column name="partidoss_perdidos">1</column>
+		</table>
+	</database>
+</pma_xml_export>
